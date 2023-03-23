@@ -54,7 +54,7 @@ tail -f ./text.log
 Secret message is: 'You can find the source code here: https://github.com/docker-hy'
 ```
 
-EXERCISE 1.4: MISSING DEPENDENCIES
+## EXERCISE 1.4: MISSING DEPENDENCIES
 
 ```shell
 docker run --rm -it --name excersice1.4 ubuntu sh -c "apt-get update; apt-get -y install curl; while true; do echo 'Input website:'; read website; echo 'Searching..'; sleep 1; curl http://$website; done"
