@@ -111,3 +111,115 @@ Give me the password: basics
 You found the correct password. Secret message is:
 "This is the secret message"
 ```
+
+## EXERCISE 1.7: IMAGE FOR SCRIPT
+
+
+```shell
+cd .\part1\1.7\ && docker build . -t curler
+```
+
+```shell
+docker run -it curler 
+Input website:
+helsinki.fi
+Searching..
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.20.1</center>
+</body>
+</html>
+Input website:
+```
+
+## EXERCISE 1.8: TWO LINE DOCKERFILE
+
+```shell
+docker build . -t web-server
+docker run --rm -it web-server
+
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:   export GIN_MODE=release
+ - using code:  gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /*path                    --> server.Start.func1 (3 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+```
+
+## EXERCISE 1.9: VOLUMES
+
+```shell
+docker run -d -v d:/MOOC/devopswithdocker/part1/1.9/text.log:/usr/src/app/text.log --rm -it --name excersice1.9 devopsdockeruh/simple-web-service
+```
+
+## EXERCISE 1.10: PORTS OPEN
+
+```shell
+docker run --rm -p 9000:8080 -it web-server
+```
+
+```shell
+// 20230328205359
+// http://localhost:9000/
+{
+  "message": "You connected to the following path: /",
+  "path": "/"
+}
+
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2023/03/28 - 17:53:57 | 200 |       226.3µs |      172.17.0.1 | GET      "/"
+[GIN] 2023/03/28 - 17:53:57 | 200 |        32.6µs |      172.17.0.1 | GET      "/favicon.ico"
+[GIN] 2023/03/28 - 17:53:58 | 200 |        35.6µs |      172.17.0.1 | GET      "/"
+[GIN] 2023/03/28 - 17:53:59 | 200 |        36.5µs |      172.17.0.1 | GET      "/favicon.ico"
+```
+
+## EXERCISE 1.10: PORTS OPEN
+
+```shell
+cd ./1.11
+docker build . -t excersice1.11
+docker run -p 9000:8080 excersice1.11
+```
+
+## MANDATORY EXERCISE 1.12: HELLO, FRONTEND!
+
+```shell
+cd ./1.12
+docker build . -t excersice1.12
+docker run -d -p 9000:5000 excersice1.12
+```
+
+## MANDATORY EXERCISE 1.13: HELLO, BACKEND!
+
+```shell
+cd ./1.12
+docker build . -t excersice1.13
+docker run -d -p 9090:8080 excersice1.13
+```
+
+## MANDATORY EXERCISE 1.14: ENVIRONMENT
+
+```shell
+docker run -d -p 9000:5000 excersice1.12
+docker run -d -p 9090:9090 --env PORT=9090 --env REQUEST_ORIGIN=http://localhost:9000 excersice1.13
+```
+
+## EXERCISE 1.15: HOMEWORK
+
+```shell
+cd ./1.15
+docker build . -t excersice1.15
+docker run -d -p 9000:3000 excersice1.15
+docker tag excersice1.15 nannahalonen/hello-world:v1
+docker push nannahalonen/hello-world:v1
+```
+
+https://hub.docker.com/r/nannahalonen/hello-world
+
+```shell
+docker run -d -p 9000:3000 nannahalonen/hello-world:v1
+```
