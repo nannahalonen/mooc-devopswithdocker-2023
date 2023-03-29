@@ -225,3 +225,10 @@ docker run -d -p 9000:3000 nannahalonen/hello-world:v1
 ```
 
 ## EXERCISE 1.16: CLOUD DEPLOYMENT
+
+1. Register on render.com
+2. Create new web service, with this repository
+3. Set Root Directory to part1/1.16
+4. Deploy
+
+https://hello-world-fgxbafanwc.onrender.com/
