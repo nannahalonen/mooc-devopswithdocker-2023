@@ -231,4 +231,6 @@ docker run -d -p 9000:3000 nannahalonen/hello-world:v1
 3. Set Root Directory to part1/1.16
 4. Deploy
 
+![image](https://user-images.githubusercontent.com/19561253/228649982-fe1efa63-4c54-4cc7-9699-6b2661f480fd.png)
+
 https://hello-world-fgxbafanwc.onrender.com/
