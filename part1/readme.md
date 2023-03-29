@@ -177,7 +177,7 @@ docker run --rm -p 9000:8080 -it web-server
 [GIN] 2023/03/28 - 17:53:59 | 200 |        36.5µs |      172.17.0.1 | GET      "/favicon.ico"
 ```
 
-## EXERCISE 1.10: PORTS OPEN
+## EXERCISE 1.11: SPRING
 
 ```shell
 cd ./1.11
@@ -223,3 +223,5 @@ https://hub.docker.com/r/nannahalonen/hello-world
 ```shell
 docker run -d -p 9000:3000 nannahalonen/hello-world:v1
 ```
+
+## EXERCISE 1.16: CLOUD DEPLOYMENT
