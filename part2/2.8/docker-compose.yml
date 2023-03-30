@@ -1,0 +1,53 @@
+version: '3.8'
+      
+services:
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx:/etc/nginx/
+    ports:
+      - 9000:9000
+    networks:
+      - web
+    container_name: excersice2.8-nginx
+  pgsql:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: password
+    container_name: excersice2.8-postgres
+    volumes:
+     - postgres_data:/var/lib/postgresql/data
+    networks:
+      - backend
+  redis:
+    image: redis
+    container_name: excersice2.8-redis
+    networks:
+      - backend
+  frontend:
+    image: excersice1.12b
+    container_name: excersice2.8-frontend
+    networks:
+      - web
+  backend:
+    environment:
+    - PORT=8080
+    - REQUEST_ORIGIN=http://localhost:9000
+    - REDIS_HOST=redis
+    - POSTGRES_HOST=pgsql
+    - POSTGRES_PASSWORD=password
+    image: excersice1.13
+    container_name: excersice2.8-backend
+    networks:
+      - web
+      - backend
+
+networks:
+  backend:
+    name: excersice2.8-backend-network
+  web:
+    name: excersice2.8-web-network
+
+volumes:
+  postgres_data:

@@ -1,0 +1,28 @@
+version: '3.8'
+      
+services:
+  redis:
+    image: redis
+    container_name: excersice2.4-redis
+    networks:
+      - backend-network
+  frontend:
+    image: excersice1.12
+    container_name: excersice2.4-frontend
+    ports:
+      - 9000:5000
+  backend:
+    environment:
+    - PORT=8080
+    - REQUEST_ORIGIN=http://localhost:9000
+    - REDIS_HOST=redis
+    image: excersice1.13
+    container_name: excersice2.4-backend
+    ports:
+      - 9090:8080
+    networks:
+      - backend-network
+
+networks:
+  backend-network:
+    name: backend-network
