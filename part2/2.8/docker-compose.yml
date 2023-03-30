@@ -6,7 +6,7 @@ services:
     volumes:
       - ./nginx:/etc/nginx/
     ports:
-      - 9000:9000
+      - 9000:80
     networks:
       - web
     container_name: excersice2.8-nginx
