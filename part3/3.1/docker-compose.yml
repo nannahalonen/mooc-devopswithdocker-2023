@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  helloworld:
+    image: nannahalonen/hello-world:latest
+    ports:
+      - 9000:8080
+    container_name: excersice3.1-helloworld
+  watchtower:
+    image: containrrr/watchtower
+    environment:
+      - WATCHTOWER_POLL_INTERVAL=60 # Poll every 60 seconds
+      - WATCHTOWER_MONITOR_ONLY=true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    container_name: excersice3.1-watchtower
