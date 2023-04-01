@@ -66,3 +66,24 @@ excersice3.7-frontend   latest    14c33681b493   10 minutes ago      477MB
 ```
 
 ## EXERCISE 3.8: MULTI-STAGE FRONTEND
+
+```shell
+excersice3.8-frontend   latest    1106697cc54e   37 seconds ago      42.2MB
+
+docker run -d -p 9000:80 excersice3.8-frontend
+```
+
+## EXERCISE 3.9: MULTI-STAGE BACKEND
+
+```shell
+excersice3.9-backend    latest    b862779c8530   32 seconds ago      13.1MB
+
+docker run -d -p 9090:8080 --env PORT=8080 --env REQUEST_ORIGIN=http://localhost:9000 excersice3.9-backend
+```
+
+## EXERCISE 3.10
+
+```shell
+excersice1.16           latest    5dcd28636d0a   3 seconds ago        915MB
+excersice3.10           latest    4dc31b942147   14 seconds ago       122MB
+```
