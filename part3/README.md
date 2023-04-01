@@ -28,6 +28,41 @@ https://hello-world-fgxbafanwc.onrender.com/
 
 ## EXERCISE 3.3: BUILDING IMAGES INSIDE OF A CONTAINER
 
+Make sure to run docker login before running the script.
+
 ```shell
-./build.sh mluukkai/express_app mluukkai/testing
+./build.sh mluukkai/express_app mluukkai/testing:latest
 ```
+
+## EXERCISE 3.4: BUILDING IMAGES INSIDE OF A CONTAINER
+
+
+## EXERCISE 3.5
+
+```shell
+docker build . -t excersice3.5-frontend
+docker run -d -p 9000:5000 excersice3.5-frontend
+
+docker build . -t excersice3.5-backend
+docker run -d -p 9090:8080 --env PORT=8080 --env REQUEST_ORIGIN=http://localhost:9000 excersice3.5-backend
+```
+
+## EXERCISE 3.6
+
+```shell
+excersice3.5-backend    latest    3f35cbdc2bf3   About an hour ago   1.07GB
+excersice3.6-backend    latest    1a1926961f65   14 minutes ago      1.07GB
+excersice3.5-frontend   latest    e9082f0b5a0b   14 minutes ago      1.26GB
+excersice3.6-frontend   latest    e93cdfc811e9   5 minutes ago       1.26GB
+```
+
+## EXERCISE 3.7
+
+```shell
+excersice3.6-backend    latest    1a1926961f65   14 minutes ago      1.07GB
+excersice3.7-backend    latest    bbecf49d023b   19 seconds ago      469MB
+excersice3.6-frontend   latest    e93cdfc811e9   5 minutes ago       1.26GB
+excersice3.7-frontend   latest    14c33681b493   10 minutes ago      477MB
+```
+
+## EXERCISE 3.8: MULTI-STAGE FRONTEND

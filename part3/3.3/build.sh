@@ -18,10 +18,10 @@ cd $FOLDER
 
 docker build -t autobuild .
 
-echo "Tag and push $HUB:latest"
+echo "Tag and push $HUB"
 
-docker tag autobuild "$HUB:latest"
-docker push "$HUB:latest"
+docker tag autobuild "$HUB"
+docker push "$HUB"
 
 echo "Clean up... Remove folder and images"
 
