@@ -42,6 +42,8 @@ cd .\material-applications\scaling-exercise\
 docker-compose up -d --scale compute=2
 ```
 
+![image](https://user-images.githubusercontent.com/19561253/228910037-2f306064-1de6-46b7-9f9d-44ed739a7873.png)
+
 ## EXERCISE 2.6-2.7
 
 ```shell
