@@ -3,7 +3,7 @@ const app = express()
 const port = 8080
 
 app.get('/', (req, res) => {
-  res.send('Hello World from nannahalonen/mooc-devopswithdocker-2023 and docker hub #3!')
+  res.send('Hello World from nannahalonen/mooc-devopswithdocker-2023 and docker hub #4!')
 })
 
 app.listen(port, () => {
