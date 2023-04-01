@@ -36,6 +36,10 @@ Make sure to run docker login before running the script.
 
 ## EXERCISE 3.4: BUILDING IMAGES INSIDE OF A CONTAINER
 
+```shell
+docker build . -t excersice3.4
+docker run --rm -v "//var/run/docker.sock:/var/run/docker.sock" -e DOCKER_USERNAME=nannahalonen excersice3.4 ./build.sh mluukkai/express_app nannahalonen/docker-in-docker:latest
+```
 
 ## EXERCISE 3.5
 
